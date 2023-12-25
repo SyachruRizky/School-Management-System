@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <style>
+
+        .navbar {
+            background-color: rgba(52, 58, 64, 0.8);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://wallpapers.com/images/hd/website-background-a6wbhti5rhqieecp.jpg') center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        h1 {
+            color: #FFF;
+            margin-bottom: 20px;
+        }
+
+        .welcome-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .user-info {
+            margin-bottom: 15px;
+            color:#000000;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-card {
+            width: 200px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-card:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" th:href="@{/home}">School Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<h1>Welcome to the School Management System</h1>
+
+<div th:if="${authenticated}" class="welcome-box">
+    <div class="user-info">
+        <p>Welcome, <span th:text="${username}"></span>!</p>
+        <p th:if="${userRole}">Logged in as User</p>
+        <p th:if="${adminRole}">Logged in as Admin</p>
+        <p>Roles: <span th:text="${authority}"></span></p>
+    </div>
+
+    <div class="btn-container">
+        <a th:href="@{/students/new}" class="btn-card">Add Student</a>
+        <a th:href="@{/teachers/new}" class="btn-card">Add Teacher</a>
+        <a th:href="@{/students}" class="btn-card">View Students</a>
+        <a th:href="@{/teachers}" class="btn-card">View Teachers</a>
+    </div>
+
+    <a th:href="@{/home/logout}" class="btn logout-btn">Logout</a>
+</div>
+</body>
+</html>
