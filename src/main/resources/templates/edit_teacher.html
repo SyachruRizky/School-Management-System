@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>School Management System - Update Teacher</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		  crossorigin="anonymous">
+	<style>
+		body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('your-background-image.jpg') center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            padding-top: 50px;
+        }
+
+        .navbar {
+            background-color: rgba(52, 58, 64, 0.8);
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	<a class="navbar-brand" th:href="@{/home}">School Management System</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</nav>
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-6 col-md-6 col-sm-6 card">
+			<h1 class="text-center">Update Teacher</h1>
+			<div class="card-body">
+				<form th:action="@{/teachers/{id} (id=${teacher.id})}" th:object="${teacher}" method="POST">
+					<div class="form-group">
+						<label>Teacher's Name</label>
+						<input type="text" name="name" th:field="*{name}" class="form-control"
+							   placeholder="Enter Teacher's Name" />
+					</div>
+
+					<div class="form-group">
+						<label>Teacher's Phone</label>
+						<input type="text" name="phone" th:field="*{phone}" class="form-control"
+							   placeholder="Enter Teacher's phone number" />
+					</div>
+
+					<div class="form-group">
+						<label>Teacher's Email</label>
+						<input type="text" name="email" th:field="*{email}" class="form-control"
+							   placeholder="Enter Teacher's Email" />
+					</div>
+
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

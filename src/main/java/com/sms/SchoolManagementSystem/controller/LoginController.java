@@ -1,6 +1,8 @@
 package com.sms.SchoolManagementSystem.controller;
 
+
 import com.sms.SchoolManagementSystem.SchoolManagementSystemApplication;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -56,21 +58,5 @@ public class LoginController {
             }
         }
 
-//            // Your basic authentication logic without dependencies
-//            if ("user".equals(username) && "password".equals(password)) {
-//                // Create a simple authentication token for demonstration purposes
-//                Authentication authentication = new UsernamePasswordAuthenticationToken(username, password);
-//
-//                // Set the authentication object in the SecurityContextHolder
-//                SecurityContextHolder.getContext().setAuthentication(authentication);
-//
-//                // Redirect to a success page
-//                return "/index";
-//            } else {
-//                // Redirect to a failure page
-//                return "redirect:/login";
-//            }
-
-//        return "redirect:/index"; // or whatever your success redirect is
 
 }
