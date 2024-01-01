@@ -108,8 +108,8 @@
     </div>
 
     <div class="btn-container">
-        <a th:href="@{/students/new}" class="btn-card">Add Student</a>
-        <a th:href="@{/teachers/new}" class="btn-card">Add Teacher</a>
+        <a th:if="${adminRole}" th:href="@{/students/new}" class="btn-card">Add Student</a>
+        <a th:if="${adminRole}" th:href="@{/teachers/new}" class="btn-card">Add Teacher</a>
         <a th:href="@{/students}" class="btn-card">View Students</a>
         <a th:href="@{/teachers}" class="btn-card">View Teachers</a>
     </div>
