@@ -12,12 +12,12 @@ import org.springframework.security.core.Authentication;
 
 @SpringBootApplication(exclude = {
 		SecurityAutoConfiguration.class })
-@EnableJpaRepositories("com.example.sms.repository")
+@EnableJpaRepositories("com.sms.SchoolManagementSystem.repository")
 @ComponentScan({
-		"com.example.sms.repository",
-		"com.example.sms.service",
-		"com.example.sms.controller",
-		"com.example.sms.domain",
+		"com.sms.SchoolManagementSystem.repository",
+		"com.sms.SchoolManagementSystem.service",
+		"com.sms.SchoolManagementSystem.controller",
+		"com.sms.SchoolManagementSystem.domain",
 })
 public class SchoolManagementSystemApplication implements CommandLineRunner{
 
