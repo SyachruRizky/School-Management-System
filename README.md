@@ -5,12 +5,12 @@ Muhammad Syachru Rizky (2112501123)
 
 Jadi dalam project ini mempunyai 2 role yaitu :
 User sebagai student 
-Id:user
-Pw:password
+🐻Id:user
+🐻‍❄️Pw:password
 
 Admin sebagai teacher 
-Id:admin 
-Pw:password
+👨‍🦲Id:admin 
+👨‍🦲Pw:password
 
 **Tampilan user **
 ![image](https://github.com/SyachruRizky/School-Management-System/assets/102303552/9281b91d-2f20-4170-9f69-ae088787ccfe)
